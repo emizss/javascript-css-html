@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escopo</title>
+</head>
+<body>
+    <script>
+        // escopo -> espaço de memoria, pedaço
+        //declarar VAR ou LET aqui nao faz diferença pq eh no escopo GLOBAL
+        // {} -> serve para isolar um mundinho de cód
+        let variavel1 = 'oi';
+        var variavel3 = 'lala';
+        variravel1 = 'oi';
+        function funcao()
+        {
+            var variavel2 = 'tchau';
+            for(let i = 0; i<10; i++)
+            {
+                document.write(i + " " + variavel2 +"<br>")
+            }
+            document.write("<h1>" + variavel2);
+            document.write("<h1>" + i);
+                //como o I foi declarado em outro escopo por LET, nao vai mostrar o resultado
+        }
+        // LET -> FICA RESTRITO AO ESCOPO DE BLOCO
+        //alert(variavel1);
+        funcao(); //executando a funcao
+        //alert(variavel2);
+    </script>
+</body>
+</html>

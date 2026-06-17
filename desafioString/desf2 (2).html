@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2 - Isa</title>
+</head>
+<body>
+    Insira uma frase: <input type="text" placeholder="frase aqui" id="frase">
+    <button type="button" onclick="dados()">Mostrar dados</button>
+
+    <script>
+        function dados(){
+            let frase = document.getElementById('frase').value;
+            document.write("Frase: "+frase+"<br><br>")
+
+            // 1 - num total de caracteres
+            let nc = frase.length; //lenght --> conta o num de caracteres
+            document.write("Número total de caracteres: "+nc+"<br>");
+
+            // 2 - num de letras
+            var letras = 'abcdefghijklmnopqrstuvwxyzáàâãéêíóôõúüç';
+            let nl=0;
+            for(let i=0;i<nc;i++){                            //includes: serve p/ verificar se um valor específico existe numa string ou num array
+                if(letras.includes(frase[i].toLowerCase())){ //toLowerCase: string é convertida p/ minúsculas
+                    nl++;
+                }
+            }
+            document.write("Número total de letras: "+nl+"<br>");
+
+            // 3 - num de digitos
+            var dig = '1234567890';
+            let nd=0;
+            for(let i=0;i<nc;i++){
+                if(dig.includes(frase[i].toLowerCase())){
+                    nd++;
+                }
+            }
+            document.write("Número total de dígitos: "+nd+"<br>");
+
+            // 4 - num de espaços
+            let ne = frase.split(" ").length-1; //split --> vai dividir a frase por espaços
+            document.write("Número de espaços: "+ne+"<br>");
+
+            // 5 - num de "que"
+            let nque = frase.toLowerCase().split("que").length-1; //vai pegar a frase, converter ela em minusculo, 
+            document.write("Número de 'que': "+nque+"<br>");      // dividir ela em que, contar a quant de vezes q foi dividida, menos 1
+            
+            // 6 - num de frases
+            var fr='.!?'; //pq a frase pode terminar em ., ! e ?
+            let nf=0;
+            for(let i=0;i<nc;i++){
+                if(fr.includes(frase[i])){
+                    nf++;
+                }
+            }
+            document.write("Número de frases: "+nf+"<br>");
+        }
+    </script>
+</body>
+</html>

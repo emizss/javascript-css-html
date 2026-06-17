@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+</head>
+<body id="body">
+    <h1>Formulario Básico</h1>
+    <form action="">
+        <label>
+           Nome Completo <input type="text" id="inputNome" required>
+        </label>
+        <br>
+        <label>
+            <p> 
+                Data de Nascimento <input type="date" id="dataNasc">
+            </p>
+            <button type="button" onclick="calcular()">Calcular Idade</button>
+        </label>
+        <label>
+            <p> Sexo:
+                <br>
+           Masculino <input type="radio" name="inputSexo">
+           Feminino <input type="radio" name="inputSexo">
+           Prefiro não informar <input type="radio" name="inputSexo">
+            </p>
+        </label>
+        <label>
+            <p>
+               Número de Filhos <input type="text" id="nFilho" maxlength="20" minlength="0">
+            </p>
+        </label>
+        <label>
+            <p>
+                Estado Civil
+                <br>
+                Solteiro <input type="radio" name="inputEstadoCivil">
+                Casado <input type="radio" name="inputEstadoCivil">
+                Divorciado <input type="radio" name="inputEstadoCivil">
+                Viúvo <input type="radio" name="inputEstadoCivil">
+            </p>
+        </label>
+        Escolaridade
+        <select>
+                <option value="opcao1">Ensino Fundamental I</option>
+                <option value="opcao2">Ensino Fundamental II</option>
+                <option value="opcao3">Ensino Médio</option>
+                <option value="opcao3">Graduação</option>
+                <option value="opcao3">Pós-graduação</option>
+                <option value="opcao3">Doutorado</option>
+                <option value="opcao3">Mestrado</option>
+          </select>
+          <br>
+          <label>
+            <br>
+            E-mail <input type="email" name="inputEmail" required>
+          </label>
+          <label>
+            <br>
+            Senha <input type="password" name="inputSenha" required>
+          </label>
+          <br>
+          <label>
+            <br>
+            Site <input type="url" name="inputUrl">
+          </label>
+          <br>
+          <label>
+            <br>
+            Telefone <input type="tel" name="inputTel" maxlength="11" minlength="11">
+          </label>
+          <br>
+          <fieldset>
+            <legend>Endereço</legend>
+            <input type="text" name="inputEstado" placeholder="Estado">
+            <input type="text" name="inputCid" placeholder="Cidade">
+            <input type="number" name="inputCep" placeholder="CEP" maxlength="9" minlength="9">
+            <input type="text" name="inputRua" placeholder="logradouro">
+            <input type="number" name="inputNumCasa" placeholder="Número" minlength="1">
+            <input type="text" name="inputComple" placeholder="Complemento">
+          </fieldset>
+          <br>
+          <label>
+            <p>
+                Cor para o fundo do site
+                <br>
+                Azul <input type="radio" name="inputCor" value="blue">
+                Vermelho <input type="radio" name="inputCor"  value="red">
+                Amarelo <input type="radio" name="inputCor"  value="yellow">
+                Verde <input type="radio" name="inputCor"  value="green">
+            </p>
+        </label>
+        <label>
+            <p>
+                Deseja receber e-mails?
+                <br>
+                SIM <input type="radio" name="inputemail">
+                NÃO <input type="radio" name="inputemail">
+            </p>
+        </label>
+        <button type="button" onclick="enviar()">Enviar </button>
+    </form>
+    <script>
+        function enviar()
+        {   
+            inputCor = document.querySelector('input[name="inputCor"]:checked').value;
+            document.body.style.backgroundColor = inputCor;
+        }
+        function calcular()
+        {
+            dataNasc = document.getElementById("dataNasc").value;
+            console.log(dataNasc)
+            anoNasc = dataNasc.split("-")[0];
+            console.log(anoNasc);
+            idade = 2025-anoNasc
+            console.log(idade)
+            alert("Parabens! Voce tem ou vai ter "+idade+" anos")
+        }
+
+    </script>
+</body>
+</html>

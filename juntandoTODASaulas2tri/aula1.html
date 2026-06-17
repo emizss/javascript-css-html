@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //string é um vetor de chat (letra por letra)
+        //posso usar " ", ' ' e ` `
+
+        let texto1 = "marcio bigolin"
+        let texto2 = 'marcio bigolin <a href="">'
+
+        // escrever uma string na vertical
+        // for(i=0;i<texto.length;i++){
+        //     document.write(texto[i] + "<br>");
+        // }
+
+        // função que vai cair na prova --> indexOF() - em que posição está o caractere
+        // se der -1 significa que não achou o caractere (0 é posição válida!!!!)
+        posicaoTag = texto2.indexOf('<')
+        document.write(posicaoTag)
+        for(i=0;i<texto.length;i++){
+            document.write(texto[i] + "<br>");
+        }
+
+      
+    </script>
+</body>
+</html>

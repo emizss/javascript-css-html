@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="corpo">
+    <form action="">
+        <label>
+            InputText/email/number: <input type="text" id="inputText" value="2"> 
+            <!-- value é diferente de , value eh um valor que faz sentido para o form -->
+        </label>
+        <br>
+        <label>
+            InputCheckbox:
+            <input type="checkbox" id="inputCheckbox" value="batata"> cenoura 
+            <!-- o checked faz com q venha por padrao marcado, alem disso, a forma completa
+                 de escrever é checked="checked"
+            -->
+            <input type="checkbox" id="inputCheckbox" value="batata" checked> eu gosto de batata
+        </label>
+        <br>
+        <label>
+            InputRadio: 
+            <label>1 : <input type="radio" name="inputRadio" value="1" ></label>
+            <!-- se usa NAME ao inves de ID, pq umm grupo de propriedade radio se identifica pelo o atributo NAME. name p backend -->
+            <label>2 : <input type="radio" name="inputRadio" value="2" ></label>
+        </label>
+
+        <br><br>
+        <button type="reset">limpar</button>
+        <button type="button" onclick="verDados()">Ver Dados</button>
+    </form>
+
+<hr>
+    <p>
+        InputText: <span id="inputTextRes"></span>
+    </p>
+    <p>
+        InputCheckbox: <span id="inputCheckboxRes"></span>
+    </p>
+    <p>
+        InputRadio: <span id="inputRadioRes"></span>
+    </p>
+
+
+    <script>
+        
+        function verDados(){
+            //leitura
+            inputText = document.getElementById("inputText").value; //2
+            inputCheckbox = document.getElementById("inputCheckbox").checked; //O value é outro
+            // inputCheckbox = document.getElementById("inputCheckbox").value O VALUE eh sempre o mesmo, independente de estar ou nao marcado;
+            
+            //Selector all - pseudo seletor (:checked) - inputRadio = CSS
+            radios = document.querySelectorAll('input[name="inputRadio"]:checked');
+            
+            //escrita
+            document.getElementById("inputTextRes").innerHTML = inputText
+            document.getElementById("inputCheckboxRes").innerHTML = inputCheckbox
+            
+            console.log(radios)
+            document.getElementById("inputRadioRes").innerHTML = radios[0].value
+            //o radio vai retornar somente a resposta da posicao 0
+            
+            //Mudando a cor de fundo exemplo
+            document.getElementById("corpo").style="background-color:blue"
+
+        }
+    </script>

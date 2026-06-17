@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul { width: 500px; }
+        li {
+        float: left;
+        margin-left: 10px;
+        list-style-type: none;
+        }
+        ul li a:link , ul li a:visited {
+        background-color: #CCCCCC;
+        display: block;
+        padding-right: 10px;
+        padding-left: 10px;
+        border: 1px dashed #333333;
+        font-family: Arial, sans-serif;
+        color: #000000;
+        text-decoration: none;
+        }
+        ul li a:hover {
+        border: 1px dashed #000000;
+        background-color: #EEEEEE;
+       
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1 style="color: rgb(255, 0, 0);">declaração css</h1>
+   <h2>inline</h2>
+   <p style="color: #000000; margin: 5px;">
+    importancia 1
+   </p>
+   <h2>incorporadas</h2>
+   <p>importancia 2</p>
+   <!-- 
+   <head>
+    body{
+    font-family-arial;
+    }
+   
+   </head>
+   -->
+   <h2>externamente</h2>
+   <p>importancia 3</p>
+   <!-- 
+   <head>
+    <link rel="stylesheet" href="folha_estilo.css">
+    -->
+    <h1 style="color: rgb(255, 123, 0);">sintaxe basica</h1>
+    <p>
+        seletor{propriedade:valor;}
+        <br>
+        obs: ponto e virgula: facultativo caso de propriedade unica e sendo o ultimo
+        para varios seletores, podem ser agrupados e separados por virgula
+        <br>
+        <em>h1,h2,h3{
+            color: black;
+            font-family:"comic sans ms"
+        }
+        </em>
+    </p>
+    <h1 style="color: blue;">seletores</h1>
+    <p> classe:
+        <br>
+        .destaque{
+            color:red;
+        }
+    </p>
+    <p> id:
+        <br>
+        #box{
+            padding:20px;
+        }
+    </p>
+    <p> arvore dom:
+        acompanha a estrutura do documento: sera valida para os itens
+        que estao dentro da estrutura (ul li a), ou seja, pegara somente
+        os links que estiverem dentro do parenteses
+        <br>
+        //css
+        <br>
+        ul li a{
+            font-variant: small-caps;
+            text-decoration:none;
+        }
+        <br>
+        //html
+        <!-- <ul>
+             <li><a href="#"> em uma lista qualquer</a></li>
+            </ul> 
+        -->
+    
+    </p>
+    <p>
+        combinador de filho direto:
+        <br>
+        //html
+        <!-- <body> 
+                <div class="nomeClasse">Aplica o estilo</div>
+            
+                <section>
+                <div class="nomeClasse">NÃO aplica o estilo</div>
+                </section>
+            </body>
+            
+        -->
+        //css
+        <br>
+        body > .nomeClasse {
+            color: red;
+          }
+        <br>
+        | Parte         | Significado                        |
+        <br>
+        | `body`        | Elemento pai                       |
+        <br>
+        | `>`           | Filho direto                       |
+        <br>
+        | `.nomeClasse` | Elemento com a classe especificada |
+        <br>
+        | `{ ... }`     | Estilo a ser aplicado              |   
+    </p>
+    <h1 style="color: rgb(79, 151, 127);"> Propriedades CSS</h1>
+    <h2>alteracoes inline type</h2>
+    <p>
+        color: cor da fonte
+        <br>
+        font-family: tipo de fonte
+        <br>
+        font-size: tam da fonte
+        <br>
+        font-style: estilo de fonte (italico e obliquio eh a msm coisa)
+        <br>
+        font-variant: fonte maiusculas de menor altura
+        <br>
+        font-weight: variacoes negrito
+        <br>
+        text-transform: maiuscula, minuscula, versalete
+        <br>
+        text-decoration: sublinhado, tracado, etc
+        <br>
+        line-height: altura da linha, aumenta espacamento
+    </p>
+    <h2>propriedade background</h2>
+    <p>
+        background-color: cor do fundo
+        <br>
+        background-image: img fundobackground-repeat: se vai repetir (repeat/no-repeat), apenas
+        na vertical (repeat-y), apenas horizontal (repeat-x)
+        <br>
+        background-attachment: se a img de fundo "rola" ou nao c tela
+        <br>
+        background-position: como e onde a img  de fundo eh posicionada
+    </p>
+    <h2>propriedades de block</h2>
+    <p>
+        letter-spacing: espacamento entre letras
+        <br>
+        word-spacing: espacamento entre letras
+        <br>
+        text-align: alinhamento do texto
+        <br>
+        text-indent: recuo do texto (esconde texto com valores negativos -20000pt)
+        <br>
+        white-space: como o browser trata espaco em braco (pre, nowrap)
+       <br>
+       | CSS                     | Resultado                                                |
+        <br>
+    | `white-space: normal`   | Espaços extras são ignorados. Sem quebras manuais.       |
+        <br>
+    | `white-space: nowrap`   | Tudo em uma linha só, sem quebra automática.             |
+    <br>
+    | `white-space: pre`      | Tudo é mantido exatamente como no HTML.                  |
+    <br>
+    | `white-space: pre-wrap` | Igual ao `pre`, mas com quebra automática de linha.      |
+    <br>
+    | `white-space: pre-line` | Quebras de linha mantidas, mas espaços extras ignorados. |
+
+        <br>
+        display: como sera exebido p obj e tipo (bloco, inline, none(esconde obj))
+
+    </p>
+    <h2>tableless</h2>
+    <p>
+        width: largura box
+        <br>
+        height: altura box
+        <br>
+        float: opcao de flutuamento do Elemento left, right
+        <br>
+        clear: parar e flutuar
+        <br>
+        margin(-top,right,bottom,left): tam margin
+        <br>
+        padding(-top,right,bottom,left): espacamento entre o item e o conteudo do item
+    </p>
+    <h2>tableless 2</h2>
+    <p>
+        position: absolute  = passar a posicao com outras propriedades, leva em consideracao a pagina toda 
+        relative: relativo ao obj que esta contido
+        <br>
+        visibility: se a div sera visivel ou nao, a diferença de <em>visibility: hidden</em>
+        para <em>display: none;</em> é que usando a opcao display o espaco ocupado pelo obj é liberado enquanto o visibility nao
+        <br>
+        overflow: o que ira acontecer caso o conteudo ultrapasse o espaco da div ou obj:
+        <br>
+        (visible=modifica o tam do componente e mostra o conteudo (padrao)
+        <br>
+        hidden = esconde oq ultrapassar
+        <br>
+        auto= coloca o scroll caso necessite
+        <br>
+        scroll= força o scroll sempre)
+        <br>
+        <strong>AS PROXIMAS</strong> essas só funcionam com position: absolute
+        z-index: altura(sobreposição), quanto maior o numero mais pra cima fica 
+        <br>
+        top, left, right, bottom: distancia do obj
+    </p>
+    <h2>border</h2>
+    <p>
+        border-style: 
+        | Valor    | Aparência                          |
+            <br>
+        | `none`   | Sem borda                          |
+        <br>
+        | `solid`  | Linha sólida (cheia)               |
+        <br>
+        | `dotted` | Pontilhada (bolinhas)              |
+        <br>
+        | `dashed` | Tracejada (traços curtos)          |
+        <br>
+        | `double` | Dupla linha                        |
+        <br>
+        | `groove` | Linha em baixo relevo              |
+        <br>
+        | `ridge`  | Linha em alto relevo               |
+        <br>
+        | `inset`  | Faz parecer "afundado" no conteúdo |
+        <br>
+        | `outset` | Faz parecer "saído" para fora      |
+        <br>
+        border-wight: tam
+        <br>
+        border-color: cor
+    </p>
+    <h2>propriedade list</h2>
+    <p>
+        list-style-type:
+        <br>
+        | Valor ul | Resultado         |
+        <br>
+        | `disc`   | ● (padrão)        |
+        <br>
+        | `circle` | ◦ (círculo vazio) |
+        <br>
+        | `square` | ■ (quadrado)      |
+        <br>
+        | `none`   | Sem marcador      |
+        <br>
+        | Valor  ul              | Resultado       |
+        <br>
+        | `decimal`              | 1, 2, 3, ...    |
+        <br>
+        | `decimal-leading-zero` | 01, 02, 03, ... |
+        <br>
+        | `lower-roman`          | i, ii, iii, ... |
+        <br>
+        | `upper-roman`          | I, II, III, ... |
+        <br>
+        | `lower-alpha`          | a, b, c, ...    |
+        <br>
+        | `upper-alpha`          | A, B, C, ...    |
+        <br>
+        | `none`                 | Sem marcador    |
+        <br>
+        list-style-image: img como marcador da lista
+        <br>
+        list-style-position: onde o marcador da lista eh posicionado
+    </p>
+    <h2>extras</h2>
+    <p>
+        cursor: modifica cursor
+        <br>
+        filter: alguns filtros como opacidade preenchimento
+        <br>
+        ex
+            | Filtro          | Exemplo CSS                 | Efeito produzido                                   |
+            <br>
+        | `blur(px)`      | `filter: blur(5px);`        | Desfoca o conteúdo                                 |
+            <br>
+        | `brightness(%)` | `filter: brightness(150%);` | Deixa mais claro (ou escuro com `<100%`)           |
+        
+    </p>
+    <h1 style="color: rgb(126, 76, 10);">Folha de estilo para links</h1>
+   <img src="img_p2/links.png" alt="">
+   <img src="img_p2/links2.png" alt="">
+   <h1 style="color: rgb(78, 78, 11);">Construindo menus</h1>
+   <p> sempre lembrar de acessibilidade caso for usar background-image</p>
+   <img src="img_p2/menu.png" alt="">
+   <ul>
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a></li>
+    </ul>
+    <h1 style="color: rgb(24, 69, 107);">extras</h1>
+    <img src="img_p2/coisitas_a_mais.png" alt="">
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menus</title>
+    <style>
+       .menu ul, .menu {
+          margin-left: 0;
+          padding-left: 0;
+       }
+       .menu ul {
+          display: none;
+          margin-top: 0.5px;
+       }
+       .menu li:hover > ul {
+         display: block;
+       }
+       .menu li:hover {
+         background: #AAA;
+       }
+       .menu li {
+          list-style-type: none;
+          margin-top: -1px;
+          margin-left: -1;
+          float: left;
+          width: 100px;
+          height: 20px;
+          border: 1px solid black;
+          box-sizing: border-box;
+          cursor: pointer;
+       }
+        .menu ul ul {
+           margin-left: calc(100% + 1px);
+           margin-top: -18.5px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>Item 1</li>
+        <li>Item 2
+          <ul>
+           <li>Item 2.1</li>
+           <li>Item 2.2
+              <ul>
+                <li>Item 2.2.1
+              </ul>
+           </li>
+          </ul>
+        </li>
+        <li>Item 3</li>
+      </ul>
+</body>
+</html>

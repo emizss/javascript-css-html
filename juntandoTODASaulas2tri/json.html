@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>html desidratado</p>
+    <p>
+        nome: <span id="nome"></span> <br>
+        idade: <span id="idade"></span> <br>
+        computador: <br>
+        - Marca <span id="marca"></span> <br>
+        - RAM <span id="ram"></span> GB
+
+    </p>
+    <script>
+        pessoa = {
+            nome: "Marcio Bigolin",
+            idade: 37,
+            profissao: "professor",
+            computador: {marca: "avell", ram: 32}
+        }
+
+        alert(pessoa)
+        alert(pessoa.nome)// pega o valor da variavel interna
+        alert(pessoa.computador.ram)
+        document.getElementById("nome").innerHTML = pessoa.nome;
+        document.getElementById("idade").innerHTML = pessoa.idade;
+        document.getElementById("marca").innerHTML = pessoa.computador.marca;
+        document.getElementById("ram").innerHTML = pessoa.computador.ram;
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bart</title>
+    <style>
+        body
+        {
+            height: 100svh;
+            background-image: url(img/Bart\ Simpson\ -\ chalkboard.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .fraseestilo{
+            text-align: center;
+            color: white;
+            font-size: 14;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let frase = prompt("Insira a frase desejada:")
+        let qnt = parseInt(prompt("<br> Insira a quantidade de vezes que você deseja repetir"))
+        for(i=0; i<qnt; i++)
+        {
+            
+        document.write("<br>"+frase+"<br>")
+        }
+    </script>
+    
+</body>
+</html>

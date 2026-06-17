@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>monstro</h1>
+    <p>
+        Nome: <span id="nome"></span> <br>
+        Vida: <span id="vida"></span> <br>
+        Energia: <span id="energia"></span> <br>
+        Força: <span id="forca"></span>
+    </p>
+
+    <button onclick="bater()" id="bater">Bater</button>
+    <script>
+        monstro =
+        {
+            nome: "zumbi",
+            vida: 37,
+            energia: 20,
+            forca: 10
+        }
+        personagem =
+        {
+            nome: "bingolin",
+            vida: 100,
+            energia: 200,
+            forca: 1
+        }
+        function bater()
+        {
+            monstro.vida --;
+            monstro.energia = Math.random()
+            if(monstro.vida > 0)
+        {
+            atualizaHud();
+        }
+        else
+        {
+            document.getElementById("vida").innerHTML = "morreu :c";
+            document.getElementById("bater").remove();
+        }
+        
+        }
+        atualizaHud();
+        function atualizaHud()
+        {
+            document.getElementById("nome").innerHTML = monstro.nome;
+            document.getElementById("vida").innerHTML = monstro.vida;
+            document.getElementById("energia").innerHTML = monstro.energia;
+            document.getElementById("forca").innerHTML = monstro.forca;
+        }
+    </script>
+</body>
+</html>

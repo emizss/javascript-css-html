@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validar Email</title>
+</head>
+<body>
+<h3>Digite seu email:</h3>
+<input type="text" id="e" placeholder="exemplo@gmail.com">
+<button onclick="v()">Validar</button>
+
+<script>
+function v(){
+    let t=document.getElementById("e").value
+    let n=t.length
+    let a=0
+    let p=0
+
+    for(let i=0;i<n;i++)
+    {
+        if(t[i]=='@')
+        {
+        a=1
+        for(let j=i+1;j<n;j++)
+        {
+            if(t[j]=='.')
+            {
+            p=1
+            }
+        }
+        }
+    }
+
+    if(n>5&&a==1 && p==1)
+    {
+        alert("Email valido!")
+    }
+    else
+    {
+    alert("Email invalido!")
+    }
+}
+</script>
+</body>
+</html>

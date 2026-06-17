@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: rgb(4, 4, 89);
+            border-radius: 12px;
+            border: none;
+            padding: 15px;
+            margin: 5px;
+            color: rgb(255, 255, 255);
+        }
+        .botaoEnvio{
+            display: flex;
+            justify-content: center;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        h3{
+            text-align: center;
+        }
+        #formulario{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            
+        }
+        input{
+            padding: 10px;
+            border: 1px solid black;
+            margin: 3px;
+        }
+        #tabela, th, td{
+            border: 1px solid green;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        p{
+            display: inline-block;
+            margin: 15px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>Adicionar colaborador</h3>
+    <div id="formulario">
+        <input placeholder="ID" id="id"> 
+        <input placeholder="Nome" id="nome">
+        <input placeholder="CPF" id="cpf">
+        <input placeholder="RG" id="rg">
+        <input placeholder="Nascimento" id="dataNasc">
+        <input placeholder="Sexo" id="sexo">
+    </div>
+    
+    <br>
+    <div class="botaoEnvio">
+        <button onclick="atualizarTabela()"> OK</button>
+    </div>
+    <br> <br> <br>
+
+    <table id="tabela">
+        <tr>
+            
+            <p>ID</p> <p>Nome</p> <p>CPF</p> <p>RG</p> <p>Nascimento</p> <p>Sexo</p>
+            
+            
+        </tr>
+        
+    </table>
+    <script>
+        contador = 1
+        function atualizarTabela ()
+        {
+            // leitura de dados
+            id = document.getElementById("id").value
+            nome = document.getElementById("nome").value
+            cpf = document.getElementById("cpf").value
+            rg = document.getElementById("rg").value
+            dataNasc = document.getElementById("dataNasc").value
+            sexo = document.getElementById("sexo").value
+
+            //colocando os dados dentro de uma tabela
+            //literal string
+            tr = `
+            <tr id="linha${contador}">
+                <td>${id}</td>
+                <td>${nome}</td>
+                <td>${cpf}</td>
+                <td>${rg}</td>
+                <td>${dataNasc}</td>
+                <td>${sexo}</td>
+                <td id="botaoApagar"><button onclick="apagar(${contador})" >X</button>
+            </tr>
+            ` 
+            contador++
+            //escrita
+            // dataTable = document.getElementById('data').innerHTML
+            // document.getElementById('data').innerHTML = dataTable + tr
+            document.getElementById('tabela').innerHTML += tr 
+        }
+    </script>
+    <script>
+        
+        function apagar(id)
+        {
+            document.getElementById("linha"+id).remove()
+        }
+    </script>
+    <!-- cada tr é uma linha -->
+</body>
+</html>

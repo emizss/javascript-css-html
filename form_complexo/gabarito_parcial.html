@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            border: 0;
+        }
+        tr{
+            border-bottom: 1px solid red;
+        }
+
+        td{
+            padding-left: 10px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Tempo direção</legend>
+        <input placeholder="Inicio" id="inicio" type="time">
+        <input placeholder="Fim" id="fim" type="time">
+        <button onclick="adicionar('')">Adicionar</button>
+       
+        <table border="1" id="tabela">
+            <tr>
+                <td>Id</td> <td>Nome</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Intervalo direção</legend>
+        <input placeholder="Inicio" id="inicioInt" type="time">
+        <input placeholder="Fim" id="fimInt" type="time">
+        <button onclick="adicionar('Int')">Adicionar</button>
+       
+        <table border="1" id="tabelaInt">
+            <tr>
+                <td>inicio</td> <td>fim</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Refeição</legend>
+        <input placeholder="Inicio" id="inicioRef" type="time">
+        <input placeholder="Fim" id="fimRef" type="time">
+        <button onclick="adicionar('Ref')">Adicionar</button>
+       
+        <table border="1" id="tabelaRef">
+            <tr>
+                <td>inicio</td> <td>fim</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Refeição</legend>
+        <input placeholder="Inicio" id="inicioRef" type="time">
+        <input placeholder="Fim" id="fimRef" type="time">
+        <button onclick="adicionar('Ref')">Adicionar</button>
+       
+        <table border="1" id="tabelaRef">
+            <tr>
+                <td>inicio</td> <td>fim</td>
+            </tr>
+        </table>
+    </fieldset>
+       
+    <script>
+        contador = 1
+        function adicionar(complemento){
+            //leitura
+            inicio = document.getElementById('inicio'+complemento).value;
+            fim = document.getElementById('fim'+complemento).value;
+
+            tr = `
+            <tr id="linha${contador}">
+                <td>${inicio}</td>
+                <td>${fim}</td>
+                <td><button onclick="apagar(${contador})">[x]</button>
+            </tr>
+            `    
+            contador++;
+            document.getElementById('tabela'+complemento).innerHTML += tr
+        }
+
+       
+   
+        function apagar(id){
+            document.getElementById("linha"+id).remove()
+        }
+    </script>
+    </body>
+</html>

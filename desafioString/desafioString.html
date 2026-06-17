@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2 - Revisado</title>
+</head>
+<body>
+    <input type="text" placeholder="Insira uma frase" id="entrada">
+    <button type="button" onclick="mostrar()">Mostrar dados</button>
+
+    <script>
+        function mostrar(){
+            let texto = document.getElementById('entrada').value;
+            document.write("Frase: " + texto + "<br><br>");
+
+            
+            let qtdCaracteres = texto.length;
+            document.write("Número total de caracteres: " + qtdCaracteres + "<br>");
+
+            
+            let conjuntoLetras = 'abcdefghijklmnopqrstuvwxyzáàâãéêíóôõúüç';
+            let contLetras = 0;
+            for(let k=0; k<qtdCaracteres; k++){
+                if(conjuntoLetras.includes(texto[k].toLowerCase())){
+                    contLetras++;
+                }
+            }
+            document.write("Número total de letras: " + contLetras + "<br>");
+
+           
+            let conjuntoDigitos = '0123456789';
+            let contDigitos = 0;
+            for(let k=0; k<qtdCaracteres; k++){
+                if(conjuntoDigitos.includes(texto[k])){
+                    contDigitos++;
+                }
+            }
+            document.write("Número total de dígitos: " + contDigitos + "<br>");
+
+        
+            let qtdEspacos = texto.split(" ").length - 1;
+            document.write("Número de espaços: " + qtdEspacos + "<br>");
+
+            
+            let fraseMin = " " + texto.toLowerCase() + " ";
+            let partes = fraseMin.split(" que ");
+            let contQue = partes.length - 1;
+            document.write("Quantidade queísmo: " + contQue + "<br>");
+
+            
+            let sinaisFinal = '.!?';
+            let contFrases = 0;
+            for(let k=0; k<qtdCaracteres; k++){
+                if(sinaisFinal.includes(texto[k])){
+                    contFrases++;
+                }
+            }
+            document.write("Número de frases: " + contFrases + "<br>");
+        }
+    </script>
+</body>
+</html>

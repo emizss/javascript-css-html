@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: rgb(200, 200, 255);
+            border-radius: 5px;
+            border: none;
+            padding: 6px;
+            margin: 5px;
+            color: rgb(255, 255, 255);
+            
+        }
+    </style>
+</head>
+<body>
+    <h3>Adicionar colaborador</h3>
+    <input placeholder="ID" id="id"> 
+    <input placeholder="Nome" id="nome">
+    <input placeholder="CPF" id="cpf">
+    <input placeholder="RG" id="rg">
+    <input placeholder="Nascimento" id="dataNasc">
+    <input placeholder="Sexo" id="sexo">
+    <br>
+    <button onclick="atualizarTabela()"> OK</button>
+    <br> <br> <br>
+
+    <table border="1" id="tabela">
+        <tr>
+            <td> ID</td> <td>Nome</td> <td>CPF</td> <td>RG</td> <td>Nascimento</td> <td>Sexo</td> <td> </td>
+            
+        </tr>
+        
+    </table>
+    <script>
+        contador = 1
+        function atualizarTabela ()
+        {
+            // leitura de dados
+            id = document.getElementById("id").value
+            nome = document.getElementById("nome").value
+            cpf = document.getElementById("cpf").value
+            rg = document.getElementById("rg").value
+            dataNasc = document.getElementById("dataNasc").value
+            sexo = document.getElementById("sexo").value
+
+            //colocando os dados dentro de uma tabela
+            //literal string
+            tr = `
+            <tr id="linha${contador}">
+                <td>${id}</td>
+                <td>${nome}</td>
+                <td>${cpf}</td>
+                <td>${rg}</td>
+                <td>${dataNasc}</td
+                <td>${sexo}</td>
+                <td><button onclick="apagar(${contador})">[x]</button>
+            </tr>
+            ` 
+            contador++
+            //escrita
+            // dataTable = document.getElementById('data').innerHTML
+            // document.getElementById('data').innerHTML = dataTable + tr
+            document.getElementById('tabela').innerHTML += tr 
+        }
+    </script>
+    <script>
+        
+        function apagar(id)
+        {
+            document.getElementById("linha"+id).remove()
+        }
+    </script>
+    <!-- cada tr é uma linha -->
+</body>
+</html>

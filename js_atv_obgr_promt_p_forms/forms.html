@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms 1</title>
+</head>
+<body>
+    <form>
+        <label>
+            <input type="number" id="n1">
+        </label>
+        <label>
+            <input type="number" id="n2">
+        </label>
+        <label>
+            <input type="number" id="n3">
+        </label>
+        <button type="button" onclick="calcular()"> Calcular </button>
+
+        <p>A soma dos valores: <span id="soma"></span></p>
+        <p>A multiplicação dos valores: <span id="multi"></span></p>
+        <p>Maior: <span id="maior"></span></p>
+        <p>Menor: <span id="menor"></span></p>
+        <p>O primeiro valor elevado na potência do último: <span id="potencia"></span></p>
+        <p>A raiz do primeiro com índice do terceiro: <span id="raiz"></span></p>
+        
+        
+    </form>
+    <script>
+        function calcular(){
+            //leitura
+            n1 = document.getElementById("n1").value
+            n2 = document.getElementById("n2").value
+            n3 = document.getElementById("n3").value
+
+            //processamento
+            n1 = parseFloat(n1)
+            n2 = parseFloat(n2)
+            n3 = parseFloat(n3)
+        
+            soma = n1 + n2 + n3
+            multi = n1 * n2 * n3
+            //se for igual
+            if(n1==n2 & n2==n3)
+            {
+               maior=n1
+               menor=n1 
+            }
+            //maior
+            if(n1>n2 & n1>n3)
+            {
+                maior = n1
+            }
+            if(n2>n1 & n2>n3)
+            {
+                maior = n2
+            }
+            if(n3>n2 & n3>n1)
+            {
+                maior = n3
+            }
+            //menor
+            if(n1<n2 & n1<n3)
+            {
+                menor = n1
+            }
+            if(n2<n1 & n2<n3)
+            {
+            menor = n2
+            }
+            if(n3<n2 & n3<n1)
+            {
+            menor = n3
+            }
+            potencia = Math.pow(n1,n3)
+            raiz = n1**(1/n3)
+            //escrita
+            document.getElementById("soma").innerHTML = soma
+            document.getElementById("multi").innerHTML = multi
+            document.getElementById("maior").innerHTML = maior
+            document.getElementById("menor").innerHTML = menor
+            document.getElementById("potencia").innerHTML = potencia
+            document.getElementById("raiz").innerHTML = raiz
+        }
+
+    </script>
+</body>
+</html>

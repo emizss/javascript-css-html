@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores css</title>
+</head>
+<style>
+    body{
+        color: white;
+        font-size: 20pt;
+    }
+    div{
+        width: 650px 650px;
+        height: 350px;
+        background-color: blue;
+        padding: 10px;
+        border-color: black;
+        border-style: solid;
+        margin-bottom: 10px;
+        
+    }
+    .pai{
+        width: 350px;
+        height: 100px;
+        position: static;
+        background-color: green;
+        margin-bottom: 10px;
+        border: none;
+    }
+    .filho{
+        
+        color: black;
+        border: none;
+        width: 350px;
+        height: 30px;
+        margin-bottom: 5px;
+        background-color: cyan;
+        
+    }
+    .irmao{
+        color: black;
+        border: none;
+        width: 350px;
+        height: 30px;
+        margin-bottom: 5px;
+        background-color: rgb(226, 226, 49);
+    }
+    body > .irmao {
+        background-color: white;
+        color: black;
+        padding: 10px;
+        margin-top: 10px;
+        width: 650px;
+        height: 30px;
+        border-color: black;
+        border-style: solid;
+    }
+    body > .filho{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        margin-top: 10px;
+        width: 650px;
+        height: 30px;
+        border-color: black;
+        border-style: solid;
+    }
+     .pai > .filho{
+        width: 150px;
+        height: 15px;
+        position: relative;
+        top: 10px;
+        background-color: red;
+        border: none;
+        color: white;
+    }
+</style>
+<body>
+    <div>
+        blue
+        <div class="pai">
+            green
+            <div class="filho">
+                red
+            </div>
+        </div>
+        <div class="irmao">
+            yellow
+        </div>
+        <div class="filho">
+            cyan
+        </div>
+
+    </div>
+    
+    <div class="irmao">
+        white
+    </div>
+    <div class="filho">
+       black
+    </div>
+</body>
+</html>

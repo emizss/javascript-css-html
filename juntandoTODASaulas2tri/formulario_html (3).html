@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Formulario Básico</h1>
+    <form action="">
+        <label>
+           Nome Completo <input type="text" id="inputNome" >
+        </label>
+        <br>
+        <label>
+            <p> 
+                Data de Nascimento <input type="date" id="dataNasc">
+            </p>
+        </label>
+        <label>
+            <p> Sexo:
+                <br>
+           Masculino <input type="radio" name="inputSexo">
+           Feminino <input type="radio" name="inputSexo">
+           Prefiro não informar <input type="radio" name="inputSexo">
+            </p>
+        </label>
+        <label>
+            <p>
+               Número de Filhos <input type="text" id="nFilho" maxlength="20" minlength="0">
+            </p>
+        </label>
+        <label>
+            <p>
+                Estado Civil
+                <br>
+                Solteiro <input type="radio" name="inputEstadoCivil">
+                Casado <input type="radio" name="inputEstadoCivil">
+                Divorciado <input type="radio" name="inputEstadoCivil">
+                Viúvo <input type="radio" name="inputEstadoCivil">
+            </p>
+        </label>
+        Escolaridade
+        <select>
+                <option value="opcao1">Ensino Fundamental I</option>
+                <option value="opcao2">Ensino Fundamental II</option>
+                <option value="opcao3">Ensino Médio</option>
+                <option value="opcao3">Graduação</option>
+                <option value="opcao3">Pós-graduação</option>
+                <option value="opcao3">Doutorado</option>
+                <option value="opcao3">Mestrado</option>
+          </select>
+    </form>
+</body>
+</html>
+<!-- 
+        Crie um formulário de cadastro que seja capaz de receber as seguintes informações do usuário:
+
+            Nome completo
+            Data de Nascimento (calcular a idade e exibir uma mensagem legal)
+            Sexo
+            Número de filhos
+            Estado Civil
+            Escolaridade
+            E-mail
+            Site
+            Telefone
+            Endereço completo (estado, cidade, cep, logradouro, número, complemento)
+            Cor preferida (cor de fundo do site)
+            Observações
+            Se deseja ou não receber e-mails com notícias
+    -->

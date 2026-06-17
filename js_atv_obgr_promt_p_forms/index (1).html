@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura de numeros</title>
+</head>
+<body>
+    <script>
+        //leitura
+        let n1 = parseFloat (prompt("insira o 1 num"))
+        let n2 = parseFloat (prompt("insira o 2 num"))
+        let n3 = parseFloat (prompt("insira o 3 num"))
+       
+        document.write("<br>Números digitados: "+n1+","+n2+" e "+n3)
+        
+        document.write("<br>A soma dos valores: "+(n1+n2+n3))
+        
+        document.write("<br>A multiplicação dos valores: "+(n1*n2*n3))
+        if(n1>n2 & n1>n3)
+        {
+            maior = n1
+        }
+        if(n2>n1 & n2>n3)
+        {
+            maior = n2
+        }
+        if(n3>n2 & n3>n1)
+        {
+            maior = n3
+        }
+        //menor
+         if(n1<n2 & n1<n3)
+        {
+            menor = n1
+        }
+        if(n2<n1 & n2<n3)
+        {
+           menor = n2
+        }
+        if(n3<n2 & n3<n1)
+        {
+           menor = n3
+        }
+     
+        document.write("<br> O MAIOR número: "+(maior))
+        document.write("<br> O MENOR número: "+(menor))
+        document.write("<br> A subtração dos valores: "+(n1-n2-n3))
+        document.write("<br> O primeiro valor elevado na potência do último: "+(Math.pow(n1,n3)))
+        document.write("<br> A raiz do primeiro com índice do terceiro: "+(n1**(1/n3)))
+    </script>
+</body>
+</html>

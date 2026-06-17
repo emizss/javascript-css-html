@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .dados_iniciais{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            
+        }
+        label{
+            display: inline-block;
+            margin: 5px;
+            justify-content: center;
+        }
+        input{
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gainsboro;
+        }
+       legend{
+        font-weight: 300;
+       }
+       fieldset{
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 1000px;
+        height: auto;
+        
+       }
+       button{
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 2px;
+        background-color: rgb(36, 117, 246);
+        height: 40px;
+       }
+       #tabela{
+        width: 100%;
+        border-collapse: collapse;
+        
+       }
+       #tabela, tr{
+        margin: 5px;
+        border-bottom: 1px solid rgb(220, 218, 218);
+       }
+       form{
+        align-items: center;
+       }
+       
+    </style>
+</head>
+<body>
+    <form>
+        <label >
+        <p class="dados_iniciais">
+            Data <span style="color: red;">*</span>
+        </p>
+        <input type="date" id="data_input">
+        </label>
+        <label>
+            <p class="dados_iniciais">
+                Motorista <span style="color: red;">*</span>
+            </p>
+            <input type="text" id="nomeMotorista">
+        </label>
+        <label>
+            <p class="dados_iniciais">Folga</p>
+            Sim <input type="radio" name="folga">
+            Não <input type="radio" name="folga">
+        </label>
+    </form>
+    
+    <fieldset>
+        <legend>Tempo de direção</legend>
+        <p>Inicio</p>
+        <input placeholder="Inicio" id="inicio" type="time">
+        <p>Fim</p>
+        <input placeholder="Fim" id="fim" type="time">
+        <button onclick="adicionar('')">Adicionar</button>
+        <br>
+        <table id="tabela">
+            <tr>
+                <td>Inicio</td> <td>Fim</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Intervalo de direção</legend>
+        <p>Inicio</p>
+        <input placeholder="Inicio" id="inicioInt" type="time">
+        <p>Fim</p>
+        <input placeholder="Fim" id="fimInt" type="time">
+        <button onclick="adicionar('int')">Adicionar</button>
+        <br>
+        <table id="tabelaInt">
+            <tr>
+                <td>Inicio</td> <td>Fim</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Refeição</legend>
+        <p>Inicio</p>
+        <input placeholder="Inicio" id="inicioRef" type="time">
+        <p>Fim</p>
+        <input placeholder="Fim" id="fimRef" type="time">
+        <button onclick="adicionar('ref')">Adicionar</button>
+        <br>
+        <table id="tabelaRef">
+            <tr>
+                <td>Inicio</td> <td>Fim</td>
+            </tr>
+        </table>
+    </fieldset>
+    <script>
+        contador = 1
+        function adicionar(complemento){
+            //leitura
+            inicio = document.getElementById('inicio'+complemento).value;
+            fim = document.getElementById('fim'+complemento).value;
+
+            tr = `
+            <tr id="linha${contador}">
+                <td>${inicio}</td>
+                <td>${fim}</td>
+                <td id="excluir"><button onclick="apagar(${contador})">x</button>
+            </tr>
+            `    
+            contador++;
+            document.getElementById('tabela'+complemento).innerHTML += tr
+        }
+
+       
+   
+        function apagar(id){
+            document.getElementById("linha"+id).remove()
+        }
+    </script>
+</body>
+</html>

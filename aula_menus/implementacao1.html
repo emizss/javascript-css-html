@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de Implementacao</title>
+    <style>
+        .menu ul, menu{
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .menu ul{
+            display: none;
+        }
+        .menu li {
+            padding: 10px ;
+            background-color: #616060;
+            margin-bottom: 1px;
+            width: 120px; 
+            cursor: grab;
+            list-style-type: none;
+            
+        }
+        .menu li:hover{
+            background-color: #e9ab00;
+            width: 120px;
+            padding: 10px ;
+            
+        }
+        .menu li:hover > ul{
+            display: inline-block;
+           margin-left: 10px;
+           position: absolute;
+            margin-bottom: 1px;
+            
+        }
+       .subMenu li{
+            background-color: #a3a3a3;
+            border-left: 3px;
+            border-color: #ffffff;
+       }
+       .subMenu li:hover{
+        background-color: #e9ab00;
+        text-decoration: underline;
+
+       }
+       .subMenu li ul li{
+        background-color: rgb(35, 35, 104);
+       }
+       body{
+        color: #ffffff;
+       }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>
+            FAQ
+            <ul class="subMenu">
+                <li>Sub Menu Item 1</li>
+                <li>
+                    Sub Menu Item 2
+                    <ul>
+                        <li>Sub sub Menu item 1</li>
+                        <li>Sub sub Menu item 2</li>
+                        <li>Sub sub Menu item 3</li>
+                        <li>Sub sub Menu item 4</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>New</li>
+    </ul>
+</body>
+</html>

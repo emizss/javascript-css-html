@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porquinha da Índia</title>
+</head>
+<body>
+    <h1>Porquinha da India</h1>
+    <p>
+        Nome: <span id="nome"></span> <br>
+        Fome: <span id="fomeVal"></span> <br>
+        Banho: <span id="banhoVal"></span> <br>
+        Música: <span id="musicaVal"></span> <br>
+    </p>
+    <img src="DSC03778.JPG" alt="" style="width: 40%;">
+    <br>
+    <button onclick="fazTudo('fome')" id="btnFome">Alimentar</button>
+    <button onclick="fazTudo('banho')" id="btnBanho">Banhar</button>
+    <button onclick="fazTudo('musica')" id="btnMusica">Escutar música</button>
+
+    <div id="pouContainer"></div>
+
+    <script>
+        let meuPou = {
+            nome: "Darwinzinha",
+            fome: 70,
+            banho: 70,
+            musica: 70
+        }
+
+        document.getElementById("nome").innerHTML = meuPou.nome;
+
+        function fazTudo(acao) {
+            if (acao == "fome") {
+                meuPou.fome += 5;
+                meuPou.banho -= 2;
+                meuPou.musica -= 2;
+            } else if (acaoo == "banho") {
+                meuPou.banho += 5;
+                meuPou.fome -= 2;
+                meuPou.musica -= 2;
+            } else if (acao == "musica") {
+                meuPou.musica += 5;
+                meuPou.banho -= 2;
+                meuPou.fome -= 2;
+            }
+
+            
+            if (meuPou.fome > 100 || meuPou.banho > 100 || meuPou.musica > 100) {
+                document.getElementById("btnFome").disabled = true;
+                document.getElementById("btnBanho").disabled = true;
+                document.getElementById("btnMusica").disabled = true;
+
+                document.getElementById("pouContainer").innerHTML = "<h2>A dawrin fugiu, vai buscar ela!!!</h2>";
+            }
+
+            atualizarDados();
+        }
+
+        function atualizarDados() {
+            document.getElementById("fomeVal").innerHTML = meuPou.fome;
+            document.getElementById("banhoVal").innerHTML = meuPou.banho;
+            document.getElementById("musicaVal").innerHTML = meuPou.musica;
+        }
+
+        atualizarDados();
+    </script>
+</body>
+</html>

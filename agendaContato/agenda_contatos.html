@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agenda</title>
+</head>
+<body>
+    <h1> Agenda Contatos</h1>
+    <fieldset>
+        <label>
+            Nome: <input type="text" id="nome">
+        </label>
+        <label>
+            Email: <input type="email" id="email">
+        </label>
+        <label>
+            Celular: <input type="text" id="celular">
+        </label>
+        <button type="button" onclick="salvar()">salvar</button>
+        <button type="button" onclick="novo()">novo</button>
+        <table border="1" id="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Celular</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <script>
+        let contador = 1
+        let linhaAtual = 0
+
+        function salvar(){
+            let nome = document.getElementById("nome").value
+            let email = document.getElementById("email").value
+            let celular = document.getElementById("celular").value
+
+            if(linhaAtual === 0){
+                let tr = `
+                <tr id="linha${contador}">
+                    <td>${nome}</td>
+                    <td>${email}</td>
+                    <td>${celular}</td>
+                    <td>
+                        <a href="#" onclick="editar(${contador})">[Alterar]</a>
+                        <a href="#" onclick="apagar(${contador})">[Excluir]</a>
+                    </td>
+                </tr>
+                `
+                document.querySelector("#tabela tbody").innerHTML += tr
+                contador++
+            } else {
+                let linha = document.getElementById("linha"+linhaAtual).children
+                linha[0].innerText = nome
+                linha[1].innerText = email
+                linha[2].innerText = celular
+                linhaAtual = 0
+            }
+            novo()
+        }
+
+        function novo(){
+            document.getElementById("nome").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("celular").value = ""
+        }
+
+        function editar(id){
+            let linha = document.getElementById("linha"+id).children
+            document.getElementById("nome").value = linha[0].innerText
+            document.getElementById("email").value = linha[1].innerText
+            document.getElementById("celular").value = linha[2].innerText
+            linhaAtual = id
+        }
+
+        function apagar(id){
+            document.getElementById("linha"+id).remove()
+            if(linhaAtual === id){ linhaAtual = 0 }
+        }
+    </script>
+</body>
+</html>

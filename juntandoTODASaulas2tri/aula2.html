@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //Slice
+    let texto = "Que <strong>lindo</strong> dia!"
+    let textoS = texto.slice(4,9) //-4 de tras p frente
+    document.write(textoS)
+
+    //substr subString
+    document.write("<hr>")
+    let subst = texto.substr(texto.indexOf("Q"),3) //o 3 é o tamanho. a partir de q pega mais 3 caracteres
+    document.write(subst)
+
+    //substituir REPLACE - faz trocas no texto
+    document.write("<hr>")
+    let pessimista = texto.replace('lindo', 'pessimo')
+    // ATAQUE XSS solucao let pessimista = texto.replace('<', '&lt;')
+    document.write(pessimista)
+    document.write("<hr>")
+    //SPLIT divide um texto 
+    let palavras = texto.split("")
+    document.write("numero de palavras" + palavras.length)
+    for(i=0; i<palavras.length; i++)
+    {
+        document.write(palavras[i] + "<br>")
+    }
+    </script>
+   
+</body>
+</html>

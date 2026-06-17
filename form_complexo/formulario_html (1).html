@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Formulario Básico</h1>
+    <form action="">
+        <label>
+           Nome Completo <input type="text" id="inputNome" required >
+        </label>
+        <br>
+        <label>
+                Data de Nascimento <input type="date" id="dataNasc">
+        
+        </label>
+        <button onclick="calcularIdade()"> Calcular idade</button>
+        <label>
+            <p> Sexo:
+                <br>
+           Masculino <input type="radio" name="inputSexo">
+           Feminino <input type="radio" name="inputSexo">
+           Prefiro não informar <input type="radio" name="inputSexo">
+            </p>
+        </label>
+        <label>
+               Número de Filhos <input type="text" id="nFilho" maxlength="20" minlength="0">
+        </label>
+        <br>
+        <fieldset>
+            <legend>Estado Civil</legend>
+            <label>
+                Solteiro <input type="radio" name="inputEstadoCivil">
+                Casado <input type="radio" name="inputEstadoCivil">
+                Divorciado <input type="radio" name="inputEstadoCivil">
+                Viúvo <input type="radio" name="inputEstadoCivil">
+            </label>
+        </fieldset>
+        <br>
+        Escolaridade
+        <select>
+                <option value="opcao1">Ensino Fundamental I</option>
+                <option value="opcao2">Ensino Fundamental II</option>
+                <option value="opcao3">Ensino Médio</option>
+                <option value="opcao3">Graduação</option>
+                <option value="opcao3">Pós-graduação</option>
+                <option value="opcao3">Doutorado</option>
+                <option value="opcao3">Mestrado</option>
+        </select>
+        <br>
+         <label for="email">
+            <br>
+            Email: <input type="email" id="email" name="email" required>
+         </label>
+        <br>
+         <label>
+            <br>
+            Telefone: <input type="number" id="tel" maxlength="11" minlength="11">
+         </label>
+         <br>
+         <fieldset>
+            <br>
+            <legend>Endereço completo</legend>
+            <label>
+                logradouro <input type="text" id="logradouro">
+            </label>
+            <label>
+                <br>
+                Número: <input type="number" id="numeroCasa" maxlength="4" minlength="1">
+            </label>
+            <br>
+            Estado:
+            <select name="estado" id="estado">
+
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Acre</option>
+                <option value="">Rio Grande do Sul</option>
+            </select>
+            <label>
+                <br>
+                Cidade: <input type="text" id="city">
+            </label>
+            <label>
+                <br>
+                CEP: <input type="number" id="cep" maxlength="8" minlength="8">
+            </label>
+            <label>
+                <br>
+                complemento: <input type="text" id="complemento">
+            </label>
+         </fieldset>
+         <label>
+            <br>
+            Senha: <input type="password" required>
+            <br>
+         </label>
+         <label>
+            <br>
+            Site: <input type="url" id="site">
+            <br>
+         </label>
+         <label>
+            <br>
+            Cor preferida: <input type="text" id="cor">
+         </label>
+         <label>
+            <br>
+            Deseja receber e-mails: 
+            SIM <input type="radio">
+            NÃO <input type="radio">
+         </label>
+         <button type="reset">limpar</button>
+         <button type="button" onclick="VerDados()"> Enviar</button>
+    </form>
+    <hr>
+    <script>
+        function calcularIdade ()
+        {
+            datanasc
+        }
+    </script>
+</body>
+</html>
+<!-- 
+        Crie um formulário de cadastro que seja capaz de receber as seguintes informações do usuário:
+
+           
+            Data de Nascimento (calcular a idade e exibir uma mensagem legal)
+          
+          
+           
+      
+            Site
+            
+            
+            Cor preferida (cor de fundo do site)
+            
+    -->
